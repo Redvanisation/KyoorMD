@@ -1,0 +1,42 @@
+.navigation {
+  box-shadow: 0 2px 5px 1px rgba($color-black, .1);
+  padding: 2rem 8rem 1rem;
+
+  &__logo-div {
+    width: 10rem;
+    &--logo {
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s;
+
+    &:hover {
+      background-color: transparent !important;
+      color: $color-black !important;
+      border-bottom: 2px solid $color-secondary;
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .navbar-menu {
+    box-shadow: none !important;
+  }
+
+  .navbar-burger {
+    background-color: transparent !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navigation {
+    padding: 1rem 2rem .5rem;
+
+    &__logo-div {
+      width: 7rem;
+    }
+  }
+}
