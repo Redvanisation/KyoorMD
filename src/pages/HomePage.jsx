@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import ProductsSection from '../containers/ProductsSection';
 import BlogSection from '../containers/BlogSection';
 import ReachOutSection from '../containers/ReachOutSection';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         <ProductsSection />
         <BlogSection />
         <ReachOutSection />
+        <Footer />
       </>
     </Layout>
   );
