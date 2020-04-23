@@ -61,6 +61,7 @@
 @media only screen and (max-width: 1023px) {
   .hero {
     height: 100%;
+    overflow: hidden;
 
     &__content {
       position: relative;
@@ -69,6 +70,14 @@
       padding: 0;
       padding-bottom: 2rem;
       margin-top: 5rem;
+
+      &--div-img {
+        position: static;
+        width: 100%;
+        background-image: none;
+        content: url('../../img/img-hero.svg');
+        padding: .5rem 0;
+      }
     }
 
     &__btn-div {
