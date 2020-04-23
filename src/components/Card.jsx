@@ -28,8 +28,13 @@ const Card = ({ title, src, content }) => {
   );
 };
 
+Card.defaultProps = {
+  src: 'Card image source',
+  content: 'Card content text',
+};
+
 Card.propTypes = {
-  title: PropTypes.array,
+  title: PropTypes.instanceOf(Array).isRequired,
   src: PropTypes.string,
   content: PropTypes.string,
 };

@@ -1,0 +1,54 @@
+.blog-section {
+  background-color: $color-tertiary;
+  
+  &__container {
+    height: 100%;
+
+    &--img-div {
+      margin: 2rem;
+      content: url('../../img/img-kyoor-airheads.svg');
+      max-width: 100%;
+    }
+
+    &--content {
+      padding: $gutter-4 6rem;
+      margin-top: 6rem;
+      width: 35%;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .blog-section {
+
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+
+      &--content {
+        padding: 3rem 5rem;
+        padding-bottom: 1rem;
+        margin: 1rem auto;
+        width: 100%;
+      }
+
+      &--img-div {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-section {
+    &__container {
+      &--content {
+        padding: 3rem .5rem;
+        text-align: center;
+      }
+    }
+
+  }
+}
