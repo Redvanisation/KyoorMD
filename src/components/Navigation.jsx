@@ -13,7 +13,7 @@ const Navigation = () => {
     >
       <Navbar.Brand>
         <a href="/" className="navigation__logo-div">
-          <img src="./img/logo/KyoorMD-logo.svg" alt="KyoorMD" className="navigation__logo-div--logo" />
+          <img src="./logo/KyoorMD-logo.svg" alt="KyoorMD" className="navigation__logo-div--logo" />
         </a>
         <Navbar.Burger onClick={() => setShowHide(!showHide)} />
       </Navbar.Brand>

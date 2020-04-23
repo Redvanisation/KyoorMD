@@ -1,3 +1,15 @@
 .section {
   padding: $gutter-4;
 }
+
+.hidden {
+  display: none;
+}
+
+.is-semi-bold {
+  font-weight: 700;
+}
+
+.is-bold {
+  font-weight: 700;
+}
