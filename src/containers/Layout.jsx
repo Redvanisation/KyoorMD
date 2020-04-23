@@ -5,9 +5,9 @@ import Navigation from '../components/Navigation';
 const Layout = ({ children }) => (
   <>
     <Navigation />
-    <div className="wrapper">
+    <main className="wrapper">
       {children}
-    </div>
+    </main>
   </>
 );
 

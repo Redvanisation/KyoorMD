@@ -13,3 +13,10 @@
 .is-bold {
   font-weight: 700;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .section {
+    padding: $gutter-4 0;
+  }
+}
