@@ -66,23 +66,29 @@
     &__content {
       position: relative;
       z-index: 1000;
-      width: 60%;
-      padding: 0;
-      padding-bottom: 2rem;
-      margin-top: 5rem;
+      width: 100% !important;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-left: auto;
+      text-align: center;
 
       &--div-img {
         position: static;
-        width: 100%;
+        width: 100% !important;
         background-image: none;
         content: url('../../img/img-hero.svg');
         padding: .5rem 0;
+      }
+      
+      &--div-img:after {
+        content: url('../../img/img-hero.svg');
       }
     }
 
     &__btn-div {
       &--btn {
-        right: 30px;
+        display: none;
       }
     }
   }
@@ -93,8 +99,8 @@
     &__content {
       width: 80%;
       margin: 1rem auto;
-      margin-top: 5rem;
-      padding-bottom: 0;
+      padding: 0;
+      padding-bottom: 2rem;
     }
   }
 }

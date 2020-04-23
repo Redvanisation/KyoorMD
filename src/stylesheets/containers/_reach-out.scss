@@ -5,6 +5,10 @@
     width: 40%;
     margin: 2rem auto;
     text-align: center;
+
+    &--text {
+      margin-bottom: 1rem;
+    }
   }
 
   &__img {

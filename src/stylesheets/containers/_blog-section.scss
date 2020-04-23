@@ -9,6 +9,10 @@
       content: url('../../img/img-kyoor-airheads.svg');
       max-width: 100%;
     }
+    
+    &--img-div:after {
+      content: url('../../img/img-kyoor-airheads.svg');
+    }
 
     &--content {
       padding: $gutter-4 6rem;

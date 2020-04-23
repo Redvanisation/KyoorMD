@@ -5,9 +5,7 @@
   &__title {
     &--part {
       display: block;
-      &:not(:last-child) {
-        margin-bottom: .5rem;
-      }
+      line-height: 1.2;
     }
   }
 

@@ -11,6 +11,10 @@
     }
   }
 
+  &__button-div {
+    display: none;
+  }
+
   &__item {
     border-bottom: 2px solid transparent;
     transition: border-bottom .2s;
@@ -23,13 +27,58 @@
   }
 }
 
+
+.burger-text {
+  display: none;
+}
+
+
 @media only screen and (max-width: 1023px) {
+  .navigation {
+    &__logo-div {
+      display: none;
+    }
+
+    &__button-div {
+      display: block;
+
+      &--btn {
+        padding: .5rem 2rem !important;
+        margin: 0 !important;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+      }
+
+      &--icon {
+        position: relative;
+        top: 3px;
+        right: -10px;
+      }
+
+      &--icon-img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
   .navbar-menu {
     box-shadow: none !important;
   }
 
   .navbar-burger {
     background-color: transparent !important;
+    margin-left: 0;
+
+
+  }
+
+  .burger-text {
+    display: inline;
+    position: relative;
+    top: 10px;
+    left: -10px;
   }
 }
 
@@ -39,6 +88,29 @@
 
     &__logo-div {
       width: 7rem;
+    }
+
+    &__button-div {
+      display: block;
+
+      &--btn {
+        padding: .3rem 1rem !important;
+        margin: 0 !important;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+      }
+
+      &--icon {
+        position: relative;
+        top: 3px;
+        right: -5px;
+      }
+
+      &--icon-img {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 }
