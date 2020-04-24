@@ -15,21 +15,24 @@ const ProductsSection = () => {
 
       <div className="columns is-desktop products__cards-container">
         <Card
-          title={['COVID-19', <br />, 'Screener']}
+          title1="COVID-19"
+          title2="Screener"
           src={nurseImg}
           content="COVID-19 is a life threating disease so make sure you know what's happening with your body."
         />
 
         <Card
-          title={['How am I', <br />, 'Feeling Sheet']}
+          title1="How am I"
+          title2="Feeling Sheet"
           src={showSheetImg}
           content="Going to visit a hospital or clinic? Make the admission process easier by having a sheet tell them how you're feeling."
         />
 
         <Card
-          title={['My Wellness', <br />, 'and Me']}
+          title1="My Wellness"
+          title2="and Me"
           src={sleepingImg}
-          content="Many of are feeling anxious and uncertain. Tell us how you are doing, whether you are at home or working we want to help you!"
+          content="Many of us are feeling anxious and uncertain. Tell us how you are doing, whether you are at home or working we want to help you!"
         />
       </div>
 

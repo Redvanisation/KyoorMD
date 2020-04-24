@@ -11,12 +11,17 @@
 
   &__cards-container {
     margin-top: 3rem;
+    position: relative;
 
     &--card {
-      min-height: 600px;
+      min-height: 650px;
       max-width: 450px;
       border-radius: 8px;
       padding: 1rem;
+    }
+
+    &--title1 {
+      margin-bottom: 0 !important;
     }
 
     &--card-text {
@@ -24,7 +29,11 @@
     }
     
     &--card-btn {
-      margin-top: 1.5rem;
+      position: absolute;
+      bottom: 45px;
+      right: 50%;
+      transform: translateX(50%);
+      margin: 0 auto;
     }
   }
 

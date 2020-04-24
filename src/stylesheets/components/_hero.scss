@@ -10,6 +10,8 @@
     padding: 2rem;
     margin: 2rem auto auto 8rem;
     text-align: left;
+    max-width: 640px;
+    text-overflow: ellipsis;
 
 
     &--p {
@@ -99,8 +101,16 @@
     &__content {
       width: 80%;
       margin: 1rem auto;
-      padding: 0;
+      padding: 1rem;
       padding-bottom: 2rem;
+      
+      &--title {
+        font-size: 2rem !important;
+      }
+
+      &--p {
+
+      }
     }
   }
 }
