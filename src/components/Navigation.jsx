@@ -27,15 +27,9 @@ const Navigation = () => {
 
       </Navbar.Brand>
       <Navbar.Menu>
-        <Navbar.Container position="end">
+        <Navbar.Container className="navigation__menu-container" position="end">
           <Navbar.Item href="#" className="navigation__item">
             About
-          </Navbar.Item>
-          <Navbar.Item href="#" className="navigation__item">
-            Business
-          </Navbar.Item>
-          <Navbar.Item href="#" className="navigation__item">
-            Family
           </Navbar.Item>
           <Navbar.Item href="#" className="navigation__item">
             Blog

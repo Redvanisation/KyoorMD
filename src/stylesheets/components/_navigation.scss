@@ -11,8 +11,29 @@
     }
   }
 
+  &__menu-container {
+    margin-right: 3.5rem;
+  }
+
   &__button-div {
-    display: none;
+    &--btn {
+      padding: .5rem 2rem !important;
+      margin: 0 !important;
+      position: absolute;
+      top: 40px;
+      right: 30px;
+    }
+
+    &--icon {
+      position: relative;
+      top: 3px;
+      right: -10px;
+    }
+
+    &--icon-img {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &__item {
@@ -27,7 +48,6 @@
   }
 }
 
-
 .burger-text {
   display: none;
 }
@@ -36,6 +56,10 @@
 @media only screen and (max-width: 1023px) {
   .navigation {
     &__logo-div {
+      display: none;
+    }
+
+    &__button-div-desktop {
       display: none;
     }
 
@@ -70,8 +94,6 @@
   .navbar-burger {
     background-color: transparent !important;
     margin-left: 0;
-
-
   }
 
   .burger-text {

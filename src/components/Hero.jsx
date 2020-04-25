@@ -3,12 +3,12 @@ import React from 'react';
 const Hero = () => {
   return (
     <section className="hero">
-      <div className="hero__btn-div">
+      {/* <div className="hero__btn-div">
         <button type="button" className="btn hero__btn-div--btn">
           English
           <i className="hero__btn-div--icon"><img src="./icons8-usa.svg" alt="usa flag" className="hero__btn-div--icon-img" /></i>
         </button>
-      </div>
+      </div> */}
 
       <div className="columns is-desktop">
         <div className="column is-half hero__content">
