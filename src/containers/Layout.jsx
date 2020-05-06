@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 
 const Layout = ({ children }) => (
   <>
+  
     <Navigation />
     <main className="wrapper">
       {children}

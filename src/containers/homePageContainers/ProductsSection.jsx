@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from '../components/Card';
-import nurseImg from '../img/img-kyoor-nurse.svg';
-import showSheetImg from '../img/img-kyoor-showsheet.svg';
-import sleepingImg from '../img/img-kyoor-sleeping.svg';
-import happyFace from '../img/img-kyoor.svg';
+import Card from '../../components/Card';
+import nurseImg from '../../img/img-kyoor-nurse.svg';
+import showSheetImg from '../../img/img-kyoor-showsheet.svg';
+import sleepingImg from '../../img/img-kyoor-sleeping.svg';
+import happyFace from '../../img/img-kyoor.svg';
 
 const ProductsSection = () => {
   return (
