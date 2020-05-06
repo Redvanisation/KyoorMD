@@ -8,7 +8,7 @@ import happyFace from '../img/img-kyoor.svg';
 const ProductsSection = () => {
   return (
     <section className="section products has-text-centered">
-      <h2 className="title is-2 is-bold products__title">
+      <h2 className="title is-bold products__title">
         <span className="products__title--part">The tools you need to get you</span>
         <span className="products__title--part">the help you need!</span>
       </h2>

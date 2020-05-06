@@ -4,6 +4,7 @@
 
   &__title {
     &--part {
+      font-size: 1.8rem;
       display: block;
       line-height: 1.2;
     }
@@ -14,7 +15,7 @@
     position: relative;
 
     &--card {
-      min-height: 650px;
+      min-height: 700px;
       max-width: 450px;
       border-radius: 8px;
       padding: 1rem;

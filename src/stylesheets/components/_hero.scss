@@ -30,34 +30,11 @@
       background-position-y: 100%;
       background-repeat: no-repeat;
     }
-  }
-
-  &__btn-div {
-    position: relative;
 
     &--btn {
-      position: absolute;
-      top: 0;
-      right: 260px;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &--icon {
-      position: relative;
-      top: 2px;
-      right: -10px;
-      display: inline-block;
-    }
-
-    &--icon-img {
-      width: 20px;
-      height: 20px; 
+      margin-top: 0 !important;
     }
   }
-
 }
 
 @media only screen and (max-width: 1023px) {
@@ -87,12 +64,6 @@
         content: url('../../img/img-hero.svg');
       }
     }
-
-    &__btn-div {
-      &--btn {
-        display: none;
-      }
-    }
   }
 }
 
@@ -108,8 +79,8 @@
         font-size: 2rem !important;
       }
 
-      &--p {
-
+      &--btn {
+        margin-top: 1rem !important;
       }
     }
   }
