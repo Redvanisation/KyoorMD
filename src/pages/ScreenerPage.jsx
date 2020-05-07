@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../containers/Layout';
-import { NavColorContext } from '../containers/providers/NavColorProvider';
+import { NavColorContext } from '../providers/NavColorProvider';
+import CovidScreener from '../containers/CovidScreener';
 
 const ScreenerPage = ({ match }) => {
   const navCtx = useContext(NavColorContext);
@@ -14,14 +15,23 @@ const ScreenerPage = ({ match }) => {
     return (
       () => navCtx.setNavColor('home')
     );
-  }, []);
+  }, [match.path, navCtx]);
 
-  // console.log('Screener color: ', navCtx.navColor);
+  const selectScreenerDisplay = () => {
+    if (match.path.includes('covid19')) {
+      return <CovidScreener />;
+    }
+    // else if (match.path.includes('feeling')) {
+    //   return 'FEEEELING!';
+    // } else if (match.path.includes('wellness')) {
+    //   return 'WELLNEEEEES!';
+    // };
+  };
 
   return (
     <Layout>
       <>
-        Screener Page
+        {selectScreenerDisplay()}
       </>
     </Layout>
   );

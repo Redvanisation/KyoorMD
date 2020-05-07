@@ -19,6 +19,7 @@ const ProductsSection = () => {
           title2="Screener"
           src={nurseImg}
           content="COVID-19 is a life threating disease so make sure you know what's happening with your body."
+          link="/screener-covid19"
         />
 
         <Card
@@ -26,6 +27,7 @@ const ProductsSection = () => {
           title2="Feeling Sheet"
           src={showSheetImg}
           content="Going to visit a hospital or clinic? Make the admission process easier by having a sheet tell them how you're feeling."
+          link="/screener-feeling"
         />
 
         <Card
@@ -33,6 +35,7 @@ const ProductsSection = () => {
           title2="and Me"
           src={sleepingImg}
           content="Many of us are feeling anxious and uncertain. Tell us how you are doing, whether you are at home or working we want to help you!"
+          link="/screener-wellness"
         />
       </div>
 

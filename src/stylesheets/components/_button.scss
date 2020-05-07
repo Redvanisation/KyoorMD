@@ -10,4 +10,11 @@
   font-family: 'Montserrat';
   outline: none;
   cursor: pointer;
+  transition: background-color, transform .2s;
+
+  &:hover {
+    background-color: $color-secondary;
+    transform: translateY(-2px);
+
+  }
 }

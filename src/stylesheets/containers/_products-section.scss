@@ -35,6 +35,12 @@
       right: 50%;
       transform: translateX(50%);
       margin: 0 auto;
+      transition: background-color, transform .2s;
+      
+      &:hover {
+        color: $color-white;
+        transform: translate(50%, -2px);
+      }
     }
   }
 

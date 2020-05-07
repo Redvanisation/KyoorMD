@@ -55,6 +55,7 @@
 
 .navigation-screener {
   background-color: $color-secondary-dark;
+  padding-top: 1rem;
 
   .navigation {
 
@@ -64,11 +65,15 @@
 
     &__item {
       color: $color-white;
+
+      &:hover {
+        color: $color-white !important;
+      }
     }
 
     &__button-div {
       &--btn {
-        top: 35px;
+        top: 15px;
         background-color: $color-secondary;
       }
     }
