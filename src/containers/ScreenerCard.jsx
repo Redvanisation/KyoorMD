@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
+import backArrowSvg from '../img/icon-backarrow.svg';
 import pageOneImage from '../img/img-kyoormessage-wave.svg';
 
 const ScreenerCard = () => {
@@ -43,10 +44,13 @@ const ScreenerCard = () => {
 
 
   return (
-    <div className="columns has-text-centered">
-      <div className="card column is-centered is-half screener-card">
+    <div className="has-text-centered">
+      <div className="card cardis-centered is-half screener-card">
         <div className="screener-card__nav-div">
-          <button type="button" className="screener-card__nav-div--item">Back</button>
+          <button type="button" className="screener-card__nav-div--item">
+            <img src={backArrowSvg} alt="vector" className="screener-card__nav-div--item-icon" />
+            Back
+          </button>
           <Link to="/" className="screener-card__nav-div--item">Cancel</Link>
         </div>
         {/* Start */}

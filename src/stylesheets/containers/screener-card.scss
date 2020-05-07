@@ -3,12 +3,14 @@
   padding: 2rem;
   border-radius: 5px;
   line-height: 1.5;
+  max-width: 50%;
 
   &__nav-div {
     display: flex;
     justify-content: space-between;
 
     &--item {
+      position: relative;
       background-color: transparent;
       border: none;
       color: $color-secondary;
@@ -22,6 +24,13 @@
         color: $color-secondary;
       }
     }
+
+    &--item-icon {
+      max-width: 13px;
+      position: relative;
+      top: 0;
+      right: 5px;
+    }
   }
 
   &__figure {
@@ -34,6 +43,10 @@
     text-align: left;
     max-width: 70%;
     margin: 0 auto;
+
+    &--part {
+      line-height: 1.5;
+    }
   }
 
   &__completion-div {
@@ -55,5 +68,30 @@
 
   &__btn {
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .screener-card {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .screener-card {
+    max-width: 95%;
+    padding: 1rem;
+
+    &__figure {
+      width: 80%;
+    }
+
+    &__title {
+      font-size: 1.3rem !important;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
   }
 }
