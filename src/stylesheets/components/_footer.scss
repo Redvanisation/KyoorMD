@@ -1,0 +1,17 @@
+.footer {
+  background-color: $color-secondary;
+  padding: 2rem 6rem;
+
+  &__text {
+    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+
+    &__text {
+      text-align: center;
+    }
+  }
+}

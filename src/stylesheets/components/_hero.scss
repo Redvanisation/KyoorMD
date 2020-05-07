@@ -1,0 +1,116 @@
+.hero {
+  position: relative;
+  padding-top: 4rem;
+  height: 500px;
+  width: 100%;
+  background-color: $color-tertiary;
+
+  &__content {
+    width: 35%;
+    padding: 2rem;
+    margin: 2rem auto auto 8rem;
+    text-align: left;
+    max-width: 640px;
+    text-overflow: ellipsis;
+
+
+    &--p {
+      margin: .5rem auto 1.5rem;
+    }
+
+    &--div-img {
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      background-image: url('../../img/img-hero.svg');
+      background-size: 90%;
+      background-position-x: 100%;
+      background-position-y: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__btn-div {
+    position: relative;
+
+    &--btn {
+      position: absolute;
+      top: 0;
+      right: 260px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--icon {
+      position: relative;
+      top: 2px;
+      right: -10px;
+      display: inline-block;
+    }
+
+    &--icon-img {
+      width: 20px;
+      height: 20px; 
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1023px) {
+  .hero {
+    height: 100%;
+    overflow: hidden;
+
+    &__content {
+      position: relative;
+      z-index: 1000;
+      width: 100% !important;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-left: auto;
+      text-align: center;
+
+      &--div-img {
+        position: static;
+        width: 100% !important;
+        background-image: none;
+        content: url('../../img/img-hero.svg');
+        padding: .5rem 0;
+      }
+      
+      &--div-img:after {
+        content: url('../../img/img-hero.svg');
+      }
+    }
+
+    &__btn-div {
+      &--btn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    &__content {
+      width: 80%;
+      margin: 1rem auto;
+      padding: 1rem;
+      padding-bottom: 2rem;
+      
+      &--title {
+        font-size: 2rem !important;
+      }
+
+      &--p {
+
+      }
+    }
+  }
+}
