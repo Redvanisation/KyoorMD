@@ -1,0 +1,138 @@
+.navigation {
+  box-shadow: 0 2px 5px 1px rgba($color-black, .1);
+  padding: 2rem 8rem 1rem;
+  font-weight: 400;
+  z-index: 10000 !important;
+
+  &__logo-div {
+    width: 10rem;
+    &--logo {
+      max-width: 100%;
+    }
+  }
+
+  &__menu-container {
+    margin-right: 3.5rem;
+  }
+
+  &__button-div {
+    &--btn {
+      padding: .5rem 2rem !important;
+      margin: 0 !important;
+      position: absolute;
+      top: 40px;
+      right: 30px;
+    }
+
+    &--icon {
+      position: relative;
+      top: 3px;
+      right: -10px;
+    }
+
+    &--icon-img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s;
+
+    &:hover {
+      background-color: transparent !important;
+      color: $color-black !important;
+      border-bottom: 2px solid $color-secondary;
+    }
+  }
+}
+
+.burger-text {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .navigation {
+    &__logo-div {
+      display: none;
+    }
+
+    &__button-div-desktop {
+      display: none;
+    }
+
+    &__button-div {
+      display: block;
+
+      &--btn {
+        padding: .5rem 2rem !important;
+        margin: 0 !important;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+      }
+
+      &--icon {
+        position: relative;
+        top: 3px;
+        right: -10px;
+      }
+
+      &--icon-img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .navbar-menu {
+    box-shadow: none !important;
+  }
+
+  .navbar-burger {
+    background-color: transparent !important;
+    margin-left: 0;
+  }
+
+  .burger-text {
+    display: inline;
+    position: relative;
+    top: 10px;
+    left: -10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navigation {
+    padding: 1rem 2rem .5rem;
+
+    &__logo-div {
+      width: 7rem;
+    }
+
+    &__button-div {
+      display: block;
+
+      &--btn {
+        padding: .3rem 1rem !important;
+        margin: 0 !important;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+      }
+
+      &--icon {
+        position: relative;
+        top: 3px;
+        right: -5px;
+      }
+
+      &--icon-img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

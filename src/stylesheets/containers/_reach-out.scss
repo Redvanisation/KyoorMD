@@ -1,0 +1,36 @@
+.reach-out {
+  position: relative;
+
+  &__content {
+    width: 40%;
+    margin: 2rem auto;
+    text-align: center;
+
+    &--text {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__img {
+    max-width: 120px;
+    position: absolute;
+    bottom: 2rem;
+    right: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .reach-out {
+
+    &__content {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    &__img {
+      position: static;
+      display: block;
+      margin: 4rem auto 2rem;
+    }
+  }
+}
