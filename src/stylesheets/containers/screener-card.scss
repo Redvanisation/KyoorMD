@@ -46,6 +46,11 @@
     max-width: 70%;
     margin: 0 auto;
 
+    &--description {
+      font-size: .8rem;
+      color: $color-secondary-dark;
+    }
+
     &--part {
       line-height: 1.5;
     }
@@ -68,6 +73,22 @@
 
     &--li {
 
+    }
+
+    &--checkbox-div {
+      text-align: left;
+      margin-bottom: .5rem;
+    }
+
+    &--checkbox {
+      display: none;
+    }
+
+    &--img {
+      position: relative;
+      width: 20px;
+      top: 3px;
+      margin-right: 1rem;
     }
 
     &--text {
