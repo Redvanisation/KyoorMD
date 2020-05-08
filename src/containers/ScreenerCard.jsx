@@ -7,20 +7,24 @@ import pageOneImage from '../img/img-kyoormessage-wave.svg';
 import pageTwoImage from '../img/img-kyoormessage-stop.svg';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
+import ScreenerOption from '../components/ScreenerOption';
 
 const ScreenerCard = () => {
 
-  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 4);
+  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 3);
 
   const handleLabelClick = (e) => {
     const img = e.target.parentNode.getElementsByTagName('img')[0];
-    if (img.src.includes(checkboxImg)) {
+    const radio = e.target.parentNode.getElementsByTagName('input')[0];
+    if (radio.checked) {
       img.src = checkboxCheckedImg;
-    } else {
-      img.src = checkboxImg;
+      console.log(e.target.value)
     }
-    // console.log(e.target.parentNode.getElementsByTagName('input')[0].value)
-    // console.log(img.src);
+  };
+
+  const changeImg = (e) => {
+    const img = e.target.parentNode.getElementsByTagName('img')[0];
+    img.src = checkboxImg;
   };
 
   const setCardPages = (pageNumber) => {
@@ -98,39 +102,39 @@ const ScreenerCard = () => {
               <p className="screener-card__content--description">Select one</p>
               <div className="screener-card__completion-div">
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="10-18" value="10-18" className="screener-card__completion-div--checkbox" hidden />
+                  <input type="radio" id="10-18" value="10-18" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="10-18" onClick={(e) => handleLabelClick(e)}>10-18</label>
+                  <label htmlFor="10-18">10-18</label>
                 </div>
 
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="19-29" value="19-29" className="screener-card__completion-div--checkbox" />
+                  <input type="radio" id="19-29" value="19-29" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="19-29" onClick={(e) => handleLabelClick(e)}>19-29</label>
+                  <label htmlFor="19-29">19-29</label>
                 </div>
 
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="30-39" value="30-39" className="screener-card__completion-div--checkbox" />
+                  <input type="radio" id="30-39" value="30-39" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="30-39" onClick={(e) => handleLabelClick(e)}>30-39</label>
+                  <label htmlFor="30-39">30-39</label>
                 </div>
 
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="40-49" value="40-49" className="screener-card__completion-div--checkbox" />
+                  <input type="radio" id="40-49" value="40-49" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="40-49" onClick={(e) => handleLabelClick(e)}>40-49</label>
+                  <label htmlFor="40-49">40-49</label>
                 </div>
 
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="50-59" value="50-59" className="screener-card__completion-div--checkbox" />
+                  <input type="radio" id="50-59" value="50-59" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="50-59" onClick={(e) => handleLabelClick(e)}>50-59</label>
+                  <label htmlFor="50-59">50-59</label>
                 </div>
 
                 <div className="screener-card__completion-div--checkbox-div">
-                  <input type="checkbox" id="60+" value="60+" className="screener-card__completion-div--checkbox" />
+                  <input type="radio" id="60+" value="60+" name="age-range" className="screener-card__completion-div--checkbox" onChange={(e) => handleLabelClick(e)} onBlur={(e) => changeImg(e)} />
                   <img src={checkboxImg} alt="vector" className="screener-card__completion-div--img" />
-                  <label htmlFor="60+" onClick={(e) => handleLabelClick(e)}>60+</label>
+                  <label htmlFor="60+">60+</label>
                 </div>
 
               </div>
@@ -142,15 +146,16 @@ const ScreenerCard = () => {
         return (
           <div className="card-content">
 
-          <h3 className="title is-3 is-bold screener-card__title">What is your age range?</h3>
-          <div className="content screener-card__content">
-            <p className="screener-card__content--description">Select one</p>
-            <div className="screener-card__completion-div">
+            <h3 className="title is-3 is-bold screener-card__title">Live with or take care of someone with COVID-19?</h3>
+            <div className="content screener-card__content">
+              <p className="screener-card__content--description">Select one</p>
+              <div className="screener-card__completion-div">
+                <ScreenerOption />
+                <ScreenerOption />
 
-
+              </div>
             </div>
           </div>
-        </div>
         );
 
       default:
