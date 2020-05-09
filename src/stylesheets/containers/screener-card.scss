@@ -4,6 +4,7 @@
   border-radius: 5px;
   line-height: 1.5;
   max-width: 50%;
+  min-height: 650px;
 
   &__nav-div {
     display: flex;
@@ -107,6 +108,10 @@
 @media only screen and (max-width: 1023px) {
   .screener-card {
     max-width: 80%;
+
+    &__content {
+      max-width: 80%;
+    }
   }
 }
 
@@ -124,7 +129,7 @@
     }
 
     &__content {
-      max-width: 100%;
+      max-width: 80%;
     }
   }
 }

@@ -152,7 +152,7 @@ const ScreenerCard = () => {
             <div className="content screener-card__content">
               <p className="screener-card__content--description">Select one</p>
               <div className="screener-card__completion-div">
-                <ScreenerOption image={optionYesImg} text="Yes, I live with or take care of someone with COVID-19." value="yes" name="option-choice" />
+                <ScreenerOption image={optionYesImg} text="Yes, I do." value="yes" name="option-choice" />
                 <ScreenerOption image={optionNoImg} text="No, I don't." value="no" name="option-choice" />
               </div>
             </div>

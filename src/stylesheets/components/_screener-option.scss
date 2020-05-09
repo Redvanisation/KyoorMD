@@ -2,10 +2,7 @@
   display: flex;
   align-items: center;
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 
   &__img {
     position: relative;
@@ -15,6 +12,7 @@
   }
 
   &__text {
+    font-size: 1rem;
     text-align: left;
     line-height: 1.5;
     cursor: pointer;
@@ -41,4 +39,29 @@
 .screener-option__radio:checked + .background {
   background-color: $color-secondary;
   color: $color-white;
+}
+
+@media only screen and (max-width: 1023px) {
+  .screener-option {
+
+    &__img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .background {
+    padding: .5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .screener-option {
+
+    &__img {
+      width: 40px;
+      height: 40px;
+    }
+    
+  }
 }
