@@ -44,7 +44,7 @@
 
   &__content {
     text-align: left;
-    max-width: 70%;
+    max-width: 80%;
     margin: 0 auto;
 
     &--description {
@@ -89,7 +89,14 @@
       position: relative;
       width: 20px;
       top: 3px;
-      margin-right: 1rem;
+      margin-right: .5rem;
+    }
+
+    &--vector {
+      position: relative;
+      top: 10px;
+      width: 35px;
+      margin-right: .5rem;
     }
 
     &--text {
@@ -103,6 +110,10 @@
   &__btn {
     margin: 0;
   }
+
+  &__checkbox-text {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
@@ -110,7 +121,7 @@
     max-width: 80%;
 
     &__content {
-      max-width: 80%;
+      max-width: 100%;
     }
   }
 }
@@ -129,7 +140,19 @@
     }
 
     &__content {
-      max-width: 80%;
+      max-width: 100%;
+    }
+
+    &__checkbox-text {
+      font-size: .8rem;
+      // letter-spacing: ;
+    }
+
+    &__completion-div {
+      &--vector {
+        width: 25px;
+        top: 5px;
+      }
     }
   }
 }

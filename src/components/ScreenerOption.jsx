@@ -20,7 +20,7 @@ const ScreenerOption = ({
   const handleRef = () => {
     if (optionRef.current.className === 'screener-option') {
       optionRef.current.children[0].checked = true;
-      console.log(optionRef.current.children[0].value);
+      // console.log(optionRef.current.children[0].value);
     }
   };
 

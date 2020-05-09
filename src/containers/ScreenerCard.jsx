@@ -10,10 +10,11 @@ import checkboxCheckedImg from '../img/CheckboxChecked.svg';
 import optionYesImg from '../img/icon-checkcircle.svg';
 import optionNoImg from '../img/icon-Xcircle.svg';
 import ScreenerOption from '../components/ScreenerOption';
+import CovidPage5 from '../components/covidScreenerPages/CovidPage5';
 
 const ScreenerCard = () => {
 
-  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 4);
+  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 5);
 
   const handleLabelClick = (e) => {
     const img = e.target.parentNode.getElementsByTagName('img')[0];
@@ -157,6 +158,11 @@ const ScreenerCard = () => {
               </div>
             </div>
           </div>
+        );
+
+      case 5:
+        return (
+          <CovidPage5 />
         );
 
 
