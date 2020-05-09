@@ -7,18 +7,20 @@ import pageOneImage from '../img/img-kyoormessage-wave.svg';
 import pageTwoImage from '../img/img-kyoormessage-stop.svg';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
+import optionYesImg from '../img/icon-checkcircle.svg';
+import optionNoImg from '../img/icon-Xcircle.svg';
 import ScreenerOption from '../components/ScreenerOption';
 
 const ScreenerCard = () => {
 
-  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 3);
+  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 4);
 
   const handleLabelClick = (e) => {
     const img = e.target.parentNode.getElementsByTagName('img')[0];
     const radio = e.target.parentNode.getElementsByTagName('input')[0];
     if (radio.checked) {
       img.src = checkboxCheckedImg;
-      console.log(e.target.value)
+      // console.log(e.target.value)
     }
   };
 
@@ -150,13 +152,15 @@ const ScreenerCard = () => {
             <div className="content screener-card__content">
               <p className="screener-card__content--description">Select one</p>
               <div className="screener-card__completion-div">
-                <ScreenerOption />
-                <ScreenerOption />
-
+                <ScreenerOption image={optionYesImg} text="Yes, I live with or take care of someone with COVID-19." value="yes" name="option-choice" />
+                <ScreenerOption image={optionNoImg} text="No, I don't." value="no" name="option-choice" />
               </div>
             </div>
           </div>
         );
+
+
+      // NEW CODE GOES HERE
 
       default:
         console.log('default');

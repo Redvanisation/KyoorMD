@@ -2,9 +2,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  border-radius: 50px;
-  box-shadow: 0px 0px 8px $color-shadow;
-  padding: 1rem 2rem;
 
   &:not(:last-child) {
     margin-bottom: 1rem;
@@ -12,13 +9,36 @@
 
   &__img {
     position: relative;
-    margin-right: 1rem;
+    margin-right: .5rem;
     width: 70px;
     height: 70px;
   }
 
   &__text {
     text-align: left;
-    letter-spacing: 0.72px;
+    line-height: 1.5;
+    cursor: pointer;
   }
+
+  &__radio {
+    position: absolute;
+    right: 50%;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.background {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0px 0px 8px $color-shadow;
+  padding: 1rem 2rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.screener-option__radio:checked + .background {
+  background-color: $color-secondary;
+  color: $color-white;
 }

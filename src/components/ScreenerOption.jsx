@@ -1,14 +1,54 @@
-import React from 'react';
-import img from '../img/icon-checkcircle.svg';
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
-const ScreenerOption = () => {
+const ScreenerOption = ({
+  image, text, value, name,
+}) => {
+  // const checkRadio = (e) => {
+  //   if (e.target.dataset.name === 'background') {
+  //     const radio = e.target.parentNode.querySelector('.screener-option__radio');
+  //     if (radio !== undefined) radio.checked = true;
+  //   } else if (e.target.name === name) {
+  //     e.target.checked = true;
+  //   }
+  // };
+
+  const optionRef = useRef(null);
+
+  const handleRef = () => {
+    if (optionRef.current.className === 'screener-option') {
+      optionRef.current.children[0].checked = true;
+      console.log(optionRef.current.children[0].value);
+    }
+  };
+
+
   return (
-    <div className="screener-option">
-      <img src={img} alt="vector" className="screener-option__img" />
-      <input type="checkbox" id="option-choice" hidden />
-      <label htmlFor="option-choice" className="screener-option__text">lorem ipsum</label>
+    <div className="screener-option" ref={optionRef}>
+      <input type="radio" value={value} id={value} name={name} className="screener-option__radio" />
+      <div className="background" data-name="background" onClick={handleRef} role="radio" aria-checked="false">
+        <img src={image} alt="vector" className="screener-option__img" />
+        <label htmlFor={value} className="screener-option__text">{text}</label>
+      </div>
     </div>
   );
+};
+
+
+ScreenerOption.defaultProps = {
+  image: 'Screener option image',
+  text: 'Screener option text',
+  value: 'Screener option value',
+  name: 'Screener option name',
+};
+
+ScreenerOption.propTypes = {
+  image: PropTypes.string,
+  text: PropTypes.string,
+  value: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default ScreenerOption;
