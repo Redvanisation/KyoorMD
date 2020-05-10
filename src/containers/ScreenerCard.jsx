@@ -14,10 +14,11 @@ import CovidPage5 from '../components/covidScreenerPages/CovidPage5';
 import CovidPage6 from '../components/covidScreenerPages/CovidPage6';
 import CovidPage7 from '../components/covidScreenerPages/CovidPage7';
 import CovidPage8 from '../components/covidScreenerPages/CovidPage8';
+import CovidPage9 from '../components/covidScreenerPages/CovidPage9';
 
 const ScreenerCard = () => {
 
-  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 8);
+  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 9);
 
   const handleLabelClick = (e) => {
     const img = e.target.parentNode.getElementsByTagName('img')[0];
@@ -181,6 +182,11 @@ const ScreenerCard = () => {
       case 8:
         return (
           <CovidPage8 />
+        );
+
+      case 9:
+        return (
+          <CovidPage9 />
         );
 
 

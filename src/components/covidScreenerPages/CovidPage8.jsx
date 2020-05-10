@@ -10,7 +10,7 @@ const CovidPage8 = () => {
   return (
     <div className="card-content">
 
-      <h3 className="title is-3 is-bold screener-card__title">Do you have any of the following symptoms?</h3>
+      <h3 className="title is-3 is-bold screener-card__title">Do you have any of the following conditions?</h3>
       <div className="content screener-card__content">
         <p className="screener-card__content--description">Select all that apply</p>
         <div className="screener-card__completion-div">
