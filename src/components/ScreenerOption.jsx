@@ -6,15 +6,6 @@ import PropTypes from 'prop-types';
 const ScreenerOption = ({
   image, text, value, name,
 }) => {
-  // const checkRadio = (e) => {
-  //   if (e.target.dataset.name === 'background') {
-  //     const radio = e.target.parentNode.querySelector('.screener-option__radio');
-  //     if (radio !== undefined) radio.checked = true;
-  //   } else if (e.target.name === name) {
-  //     e.target.checked = true;
-  //   }
-  // };
-
   const optionRef = useRef(null);
 
   const handleRef = () => {

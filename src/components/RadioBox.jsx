@@ -1,45 +1,41 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
 
-const CheckBox = ({ value, vector }) => {
+const RadioBox = ({ value }) => {
   const selectRef = useRef(null);
   const imgRef = useRef(null);
 
 
   const handleLabelClick = () => {
     // console.log(selectRef.current);
-    if (imgRef.current.src.includes(checkboxImg)) {
+    if (selectRef.current.checked) {
       imgRef.current.src = checkboxCheckedImg;
-      return;
     }
+  };
 
+  const revertImg = () => {
     imgRef.current.src = checkboxImg;
   };
 
   return (
-    <div className="screener-card__completion-div--checkbox-div">
-      <input type="checkbox" id={value} value={value} name="age-range" className="screener-card__completion-div--checkbox" ref={selectRef} onClick={handleLabelClick} />
+    <div className="screener-card__completion-div--checkbox-div" onClick={handleLabelClick}>
+      <input type="radio" id={value} value={value} name="age-range" className="screener-card__completion-div--checkbox" ref={selectRef} onBlur={revertImg} />
       <img src={checkboxImg} alt="vector" ref={imgRef} className="screener-card__completion-div--img" />
-      {
-        vector
-          ? <img src={vector} alt="vector" className="screener-card__completion-div--vector" />
-          : null
-      }
       <label htmlFor={value} className="screener-card__checkbox-text">{value}</label>
     </div>
   );
 };
 
-CheckBox.defaultProps = {
+RadioBox.defaultProps = {
   value: 'Value',
-  vector: 'Vector image',
 };
 
-CheckBox.propTypes = {
+RadioBox.propTypes = {
   value: PropTypes.string,
-  vector: PropTypes.string,
 };
 
-export default CheckBox;
+export default RadioBox;

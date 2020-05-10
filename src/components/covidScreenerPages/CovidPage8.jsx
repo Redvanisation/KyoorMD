@@ -1,9 +1,5 @@
 import React from 'react';
 import CheckBox from '../CheckBox';
-import nauseaImg from '../../img/icon-nausea.svg';
-import fatigueImg from '../../img/icon-bodyaches.svg';
-import lostTasteImg from '../../img/icon-losttaste.svg';
-import headacheImg from '../../img/icon-headache.svg';
 
 const CovidPage8 = () => {
 
@@ -15,18 +11,18 @@ const CovidPage8 = () => {
         <p className="screener-card__content--description">Select all that apply</p>
         <div className="screener-card__completion-div">
 
-          <CheckBox value="Pregnancy" />
-          <CheckBox value="Severe kidney disease" />
-          <CheckBox value="Chronic liver disease" />
-          <CheckBox value="Severe immune system deficiencies" />
-          <CheckBox value="History of organ transplant" />
-          <CheckBox value="Current malignancy" />
-          <CheckBox value="Extreme obesity" />
-          <CheckBox value="Severe cardiovascular disease" />
-          <CheckBox value="Diabetes with complications" />
-          <CheckBox value="History of HIV or AIDS" />
-          <CheckBox value="Asthma or chronic lung disease" />
-          <CheckBox value="None" />
+          <CheckBox value="Pregnancy" vector={null} />
+          <CheckBox value="Severe kidney disease" vector={null} />
+          <CheckBox value="Chronic liver disease" vector={null} />
+          <CheckBox value="Severe immune system deficiencies" vector={null} />
+          <CheckBox value="History of organ transplant" vector={null} />
+          <CheckBox value="Current malignancy" vector={null} />
+          <CheckBox value="Extreme obesity" vector={null} />
+          <CheckBox value="Severe cardiovascular disease" vector={null} />
+          <CheckBox value="Diabetes with complications" vector={null} />
+          <CheckBox value="History of HIV or AIDS" vector={null} />
+          <CheckBox value="Asthma or chronic lung disease" vector={null} />
+          <CheckBox value="None" vector={null} />
 
 
         </div>
