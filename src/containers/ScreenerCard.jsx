@@ -12,10 +12,11 @@ import optionNoImg from '../img/icon-Xcircle.svg';
 import ScreenerOption from '../components/ScreenerOption';
 import CovidPage5 from '../components/covidScreenerPages/CovidPage5';
 import CovidPage6 from '../components/covidScreenerPages/CovidPage6';
+import CovidPage7 from '../components/covidScreenerPages/CovidPage7';
 
 const ScreenerCard = () => {
 
-  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 6);
+  const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 7);
 
   const handleLabelClick = (e) => {
     const img = e.target.parentNode.getElementsByTagName('img')[0];
@@ -169,6 +170,11 @@ const ScreenerCard = () => {
       case 6:
         return (
           <CovidPage6 />
+        );
+
+      case 7:
+        return (
+          <CovidPage7 />
         );
 
 
