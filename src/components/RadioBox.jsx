@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useRef } from 'react';
@@ -5,21 +6,22 @@ import PropTypes from 'prop-types';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
 
-const RadioBox = ({ value }) => {
+const RadioBox = ({ value, setPageResults }) => {
   const selectRef = useRef(null);
   const imgRef = useRef(null);
 
 
   const handleLabelClick = () => {
-    // console.log(selectRef.current);
     if (selectRef.current.checked) {
       imgRef.current.src = checkboxCheckedImg;
+      setPageResults(selectRef.current.value);
     }
   };
 
   const revertImg = () => {
     imgRef.current.src = checkboxImg;
   };
+
 
   return (
     <div className="screener-card__completion-div--checkbox-div" onClick={handleLabelClick}>

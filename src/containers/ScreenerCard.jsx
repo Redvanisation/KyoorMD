@@ -1,5 +1,6 @@
+/* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 import backArrowSvg from '../img/icon-backarrow.svg';
@@ -15,9 +16,17 @@ import CovidPage8 from '../components/covidScreenerPages/CovidPage8';
 import CovidPage9 from '../components/covidScreenerPages/CovidPage9';
 
 const ScreenerCard = () => {
-
   const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 1);
+  const [userResults, setUserResults] = useLocalStorage('User Results', []);
+  const [pageResults, setPageResults] = useState(null);
 
+
+  const confirmPage = () => {
+    setUserResults([...userResults, pageResults]);
+    setCardPagesProgress((prev) => prev + 1);
+  };
+
+  // console.log({pageResults});
 
 
   const setCardPages = (pageNumber) => {
@@ -29,25 +38,25 @@ const ScreenerCard = () => {
         return <CovidPage2 />;
 
       case 3:
-        return <CovidPage3 />;
+        return <CovidPage3 setPageResults={setPageResults} />;
 
       case 4:
-        return <CovidPage4 />;
+        return <CovidPage4 setPageResults={setPageResults} />;
 
       case 5:
-        return <CovidPage5 />;
+        return <CovidPage5 setPageResults={setPageResults} />;
 
       case 6:
-        return <CovidPage6 />;
+        return <CovidPage6 setPageResults={setPageResults} />;
 
       case 7:
-        return <CovidPage7 />;
+        return <CovidPage7 setPageResults={setPageResults} />;
 
       case 8:
-        return <CovidPage8 />;
+        return <CovidPage8 setPageResults={setPageResults} />;
 
       case 9:
-        return <CovidPage9 />;
+        return <CovidPage9 setPageResults={setPageResults} />;
 
       case 10:
         return (
@@ -55,8 +64,6 @@ const ScreenerCard = () => {
             Results Page
           </div>
         );
-
-      // NEW CODE GOES HERE
 
       default:
         console.log('default');
@@ -68,14 +75,14 @@ const ScreenerCard = () => {
     <div className="has-text-centered">
       <div className="card cardis-centered is-half screener-card">
         <div className="screener-card__nav-div">
-          <button type="button" className="screener-card__nav-div--item" onClick={() => setCardPagesProgress(prev => prev > 1 ? prev - 1 : 1)}>
+          <button type="button" className="screener-card__nav-div--item" onClick={() => setCardPagesProgress((prev) => (prev > 1 ? prev - 1 : 1))}>
             <img src={backArrowSvg} alt="vector" className="screener-card__nav-div--item-icon" />
             Back
           </button>
           <Link to="/" className="screener-card__nav-div--item">Cancel</Link>
         </div>
         {setCardPages(cardPagesProgress)}
-        <button type="button" className="btn screener-card__btn" onClick={() => setCardPagesProgress(prev => prev + 1)}>{cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}</button>
+        <button type="button" className="btn screener-card__btn" onClick={() => confirmPage()}>{cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}</button>
       </div>
     </div>
   );
