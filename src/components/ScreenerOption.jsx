@@ -4,14 +4,14 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const ScreenerOption = ({
-  image, text, value, name,
+  image, text, value, name, userResults, setUserResults,
 }) => {
   const optionRef = useRef(null);
 
   const handleRef = () => {
     if (optionRef.current.className === 'screener-option') {
       optionRef.current.children[0].checked = true;
-      // console.log(optionRef.current.children[0].value);
+      setUserResults({ ...userResults, [name]: optionRef.current.children[0].value });
     }
   };
 
@@ -40,6 +40,8 @@ ScreenerOption.propTypes = {
   text: PropTypes.string,
   value: PropTypes.string,
   name: PropTypes.string,
+  userResults: PropTypes.instanceOf(Object).isRequired,
+  setUserResults: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default ScreenerOption;

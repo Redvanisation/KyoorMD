@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 import backArrowSvg from '../img/icon-backarrow.svg';
@@ -17,14 +17,21 @@ import CovidPage9 from '../components/covidScreenerPages/CovidPage9';
 
 const ScreenerCard = () => {
   const [cardPagesProgress, setCardPagesProgress] = useLocalStorage('Card Pages Progress', 1);
-  const [userResults, setUserResults] = useLocalStorage('User Results', []);
-  const [pageResults, setPageResults] = useState(null);
+  const [userResults, setUserResults] = useLocalStorage('User Results', {
+    age: '',
+    care: '',
+    symptoms1: [],
+    highRisk: '',
+    symptoms2: [],
+    conditions: [],
+  });
+  // const [pageResults, setPageResults] = useState(null);
 
 
-  const confirmPage = () => {
-    setUserResults([...userResults, pageResults]);
-    setCardPagesProgress((prev) => prev + 1);
-  };
+  // const confirmPage = () => {
+  //   setUserResults([...userResults, pageResults]);
+  //   setCardPagesProgress((prev) => prev + 1);
+  // };
 
   // console.log({pageResults});
 
@@ -38,25 +45,25 @@ const ScreenerCard = () => {
         return <CovidPage2 />;
 
       case 3:
-        return <CovidPage3 setPageResults={setPageResults} />;
+        return <CovidPage3 userResults={userResults} setUserResults={setUserResults} />;
 
       case 4:
-        return <CovidPage4 setPageResults={setPageResults} />;
+        return <CovidPage4 userResults={userResults} setUserResults={setUserResults} />;
 
       case 5:
-        return <CovidPage5 setPageResults={setPageResults} />;
+        return <CovidPage5 userResults={userResults} setUserResults={setUserResults} />;
 
       case 6:
-        return <CovidPage6 setPageResults={setPageResults} />;
+        return <CovidPage6 userResults={userResults} setUserResults={setUserResults} />;
 
       case 7:
-        return <CovidPage7 setPageResults={setPageResults} />;
+        return <CovidPage7 userResults={userResults} setUserResults={setUserResults} />;
 
       case 8:
-        return <CovidPage8 setPageResults={setPageResults} />;
+        return <CovidPage8 userResults={userResults} setUserResults={setUserResults} />;
 
       case 9:
-        return <CovidPage9 setPageResults={setPageResults} />;
+        return <CovidPage9 userResults={userResults} setUserResults={setUserResults} />;
 
       case 10:
         return (
@@ -82,7 +89,7 @@ const ScreenerCard = () => {
           <Link to="/" className="screener-card__nav-div--item">Cancel</Link>
         </div>
         {setCardPages(cardPagesProgress)}
-        <button type="button" className="btn screener-card__btn" onClick={() => confirmPage()}>{cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}</button>
+        <button type="button" className="btn screener-card__btn" onClick={() => setCardPagesProgress((prev) => prev + 1)}>{cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}</button>
       </div>
     </div>
   );

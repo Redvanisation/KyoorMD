@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
 
-const RadioBox = ({ value, setPageResults }) => {
+const RadioBox = ({ value, userResults, setUserResults }) => {
   const selectRef = useRef(null);
   const imgRef = useRef(null);
 
@@ -14,14 +14,13 @@ const RadioBox = ({ value, setPageResults }) => {
   const handleLabelClick = () => {
     if (selectRef.current.checked) {
       imgRef.current.src = checkboxCheckedImg;
-      setPageResults(selectRef.current.value);
+      setUserResults({ age: selectRef.current.value });
     }
   };
 
   const revertImg = () => {
     imgRef.current.src = checkboxImg;
   };
-
 
   return (
     <div className="screener-card__completion-div--checkbox-div" onClick={handleLabelClick}>

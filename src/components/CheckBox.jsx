@@ -1,22 +1,35 @@
-import React, { useRef } from 'react';
+/* eslint-disable no-unused-expressions */
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
 
-const CheckBox = ({ value, vector }) => {
+const CheckBox = ({
+  value, vector, symptoms, setSymptoms,
+}) => {
   const selectRef = useRef(null);
   const imgRef = useRef(null);
 
 
   const handleLabelClick = () => {
-    // console.log(selectRef.current);
     if (imgRef.current.src.includes(checkboxImg)) {
       imgRef.current.src = checkboxCheckedImg;
+
+      symptoms.indexOf(selectRef.current.value) === -1
+        ? setSymptoms((prev) => [...prev, selectRef.current.value])
+        : null;
+
       return;
     }
 
     imgRef.current.src = checkboxImg;
+
+    setSymptoms(symptoms.filter((elem) => elem !== selectRef.current.value));
+
+    console.log(symptoms);
   };
+
+  // console.log(symptoms)
 
   return (
     <div className="screener-card__completion-div--checkbox-div">
@@ -40,6 +53,8 @@ CheckBox.defaultProps = {
 CheckBox.propTypes = {
   value: PropTypes.string,
   vector: PropTypes.string,
+  symptoms: PropTypes.instanceOf(Array).isRequired,
+  setSymptoms: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CheckBox;
