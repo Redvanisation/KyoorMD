@@ -6,7 +6,13 @@ import optionNoImg from '../../img/icon-Xcircle.svg';
 import unsureImg from '../../img/icon-unsure.svg';
 
 
-const CovidPage6 = ({ userResults, setUserResults }) => {
+const CovidPage6 = ({
+  userResults, setUserResults, cardPagesProgress, setCardPagesProgress,
+}) => {
+  const handleClick = () => {
+    setCardPagesProgress((prev) => prev + 1);
+  };
+
   return (
     <div className="card-content">
 
@@ -25,6 +31,13 @@ const CovidPage6 = ({ userResults, setUserResults }) => {
 
         </div>
       </div>
+      <button
+        type="button"
+        className="btn screener-card__btn"
+        onClick={() => handleClick()}
+      >
+        {cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}
+      </button>
     </div>
   );
 };
@@ -32,6 +45,8 @@ const CovidPage6 = ({ userResults, setUserResults }) => {
 CovidPage6.propTypes = {
   userResults: PropTypes.instanceOf(Object).isRequired,
   setUserResults: PropTypes.instanceOf(Function).isRequired,
+  cardPagesProgress: PropTypes.instanceOf(Number).isRequired,
+  setCardPagesProgress: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CovidPage6;

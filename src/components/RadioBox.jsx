@@ -37,6 +37,8 @@ RadioBox.defaultProps = {
 
 RadioBox.propTypes = {
   value: PropTypes.string,
+  userResults: PropTypes.instanceOf(Object).isRequired,
+  setUserResults: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default RadioBox;

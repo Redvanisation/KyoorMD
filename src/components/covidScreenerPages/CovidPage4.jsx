@@ -4,7 +4,13 @@ import ScreenerOption from '../ScreenerOption';
 import optionYesImg from '../../img/icon-checkcircle.svg';
 import optionNoImg from '../../img/icon-Xcircle.svg';
 
-const CovidPage4 = ({ userResults, setUserResults }) => {
+const CovidPage4 = ({
+  userResults, setUserResults, cardPagesProgress, setCardPagesProgress,
+}) => {
+  const handleClick = () => {
+    setCardPagesProgress((prev) => prev + 1);
+  };
+
   return (
     <div className="card-content">
 
@@ -16,6 +22,13 @@ const CovidPage4 = ({ userResults, setUserResults }) => {
           <ScreenerOption image={optionNoImg} text="No, I don't." value="no" name="care" userResults={userResults} setUserResults={setUserResults} />
         </div>
       </div>
+      <button
+        type="button"
+        className="btn screener-card__btn"
+        onClick={() => handleClick()}
+      >
+        {cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}
+      </button>
     </div>
   );
 };
@@ -23,6 +36,8 @@ const CovidPage4 = ({ userResults, setUserResults }) => {
 CovidPage4.propTypes = {
   userResults: PropTypes.instanceOf(Object).isRequired,
   setUserResults: PropTypes.instanceOf(Function).isRequired,
+  cardPagesProgress: PropTypes.instanceOf(Number).isRequired,
+  setCardPagesProgress: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CovidPage4;

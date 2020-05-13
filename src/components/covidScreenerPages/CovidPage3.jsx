@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import RadioBox from '../RadioBox';
 
-const CovidPage3 = ({ userResults, setUserResults }) => {
+const CovidPage3 = ({
+  userResults, setUserResults, cardPagesProgress, setCardPagesProgress,
+}) => {
+  const handleClick = () => {
+    setCardPagesProgress((prev) => prev + 1);
+  };
 
   return (
     <div className="card-content">
@@ -19,8 +25,22 @@ const CovidPage3 = ({ userResults, setUserResults }) => {
 
         </div>
       </div>
+      <button
+        type="button"
+        className="btn screener-card__btn"
+        onClick={() => handleClick()}
+      >
+        {cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}
+      </button>
     </div>
   );
+};
+
+CovidPage3.propTypes = {
+  userResults: PropTypes.instanceOf(Object).isRequired,
+  setUserResults: PropTypes.instanceOf(Function).isRequired,
+  cardPagesProgress: PropTypes.instanceOf(Number).isRequired,
+  setCardPagesProgress: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CovidPage3;

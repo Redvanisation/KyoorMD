@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CheckBox from '../CheckBox';
 import feverImg from '../../img/icon-fever.svg';
@@ -6,12 +6,15 @@ import dryCoughImg from '../../img/icon-coughing.svg';
 import soreThroatImg from '../../img/icon-sorethroat.svg';
 import chestPainImg from '../../img/icon-chestpain.svg';
 
-const CovidPage5 = ({ userResults, setUserResults }) => {
+const CovidPage5 = ({
+  userResults, setUserResults, cardPagesProgress, setCardPagesProgress,
+}) => {
   const [symptoms, setSymptoms] = useState([]);
 
-  useEffect(() => {
+  const handleClick = () => {
     setUserResults({ ...userResults, symptoms1: symptoms });
-  }, [symptoms]);
+    setCardPagesProgress((prev) => prev + 1);
+  };
 
   return (
     <div className="card-content">
@@ -26,7 +29,15 @@ const CovidPage5 = ({ userResults, setUserResults }) => {
           <CheckBox value="Cough with sputum & sore throat" vector={soreThroatImg} symptoms={symptoms} setSymptoms={setSymptoms} />
           <CheckBox value="Shortness of breath or tight chest" vector={chestPainImg} symptoms={symptoms} setSymptoms={setSymptoms} />
         </div>
+
       </div>
+      <button
+        type="button"
+        className="btn screener-card__btn"
+        onClick={() => handleClick()}
+      >
+        {cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}
+      </button>
     </div>
   );
 };
@@ -34,6 +45,8 @@ const CovidPage5 = ({ userResults, setUserResults }) => {
 CovidPage5.propTypes = {
   userResults: PropTypes.instanceOf(Object).isRequired,
   setUserResults: PropTypes.instanceOf(Function).isRequired,
+  cardPagesProgress: PropTypes.instanceOf(Number).isRequired,
+  setCardPagesProgress: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CovidPage5;

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import checkboxImg from '../img/Checkbox.svg';
 import checkboxCheckedImg from '../img/CheckboxChecked.svg';
@@ -15,10 +15,9 @@ const CheckBox = ({
     if (imgRef.current.src.includes(checkboxImg)) {
       imgRef.current.src = checkboxCheckedImg;
 
-      symptoms.indexOf(selectRef.current.value) === -1
-        ? setSymptoms((prev) => [...prev, selectRef.current.value])
-        : null;
-
+      if (symptoms.indexOf(selectRef.current.value) === -1) {
+        setSymptoms((prev) => [...prev, selectRef.current.value]);
+      }
       return;
     }
 
@@ -29,7 +28,6 @@ const CheckBox = ({
     console.log(symptoms);
   };
 
-  // console.log(symptoms)
 
   return (
     <div className="screener-card__completion-div--checkbox-div">

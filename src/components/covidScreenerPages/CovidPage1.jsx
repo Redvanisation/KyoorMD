@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import pageOneImage from '../../img/img-kyoormessage-wave.svg';
 
-const CovidPage1 = () => {
+const CovidPage1 = ({ cardPagesProgress, setCardPagesProgress }) => {
+  const handleClick = () => {
+    setCardPagesProgress((prev) => prev + 1);
+  };
+
   return (
     <div className="card-content">
       <div className="card-image">
@@ -24,8 +29,20 @@ const CovidPage1 = () => {
 
         </div>
       </div>
+      <button
+        type="button"
+        className="btn screener-card__btn"
+        onClick={() => handleClick()}
+      >
+        {cardPagesProgress === 1 ? 'Get Started' : 'Next Page'}
+      </button>
     </div>
   );
+};
+
+CovidPage1.propTypes = {
+  cardPagesProgress: PropTypes.instanceOf(Number).isRequired,
+  setCardPagesProgress: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default CovidPage1;
