@@ -32,7 +32,12 @@ const ScreenerCard = () => {
   const setCardPages = (pageNumber) => {
     switch (pageNumber) {
       case 1:
-        return <CovidPage1 cardPagesProgress={cardPagesProgress} setCardPagesProgress={setCardPagesProgress} />;
+        return (
+          <CovidPage1
+            cardPagesProgress={cardPagesProgress}
+            setCardPagesProgress={setCardPagesProgress}
+          />
+        );
 
       case 2:
         return <CovidPage2 cardPagesProgress={cardPagesProgress} setCardPagesProgress={setCardPagesProgress} />;
