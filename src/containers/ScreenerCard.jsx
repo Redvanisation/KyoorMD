@@ -40,7 +40,12 @@ const ScreenerCard = () => {
         );
 
       case 2:
-        return <CovidPage2 cardPagesProgress={cardPagesProgress} setCardPagesProgress={setCardPagesProgress} />;
+        return (
+          <CovidPage2
+            cardPagesProgress={cardPagesProgress}
+            setCardPagesProgress={setCardPagesProgress}
+          />
+        );
 
       case 3:
         return <CovidPage3 userResults={userResults} setUserResults={setUserResults} cardPagesProgress={cardPagesProgress} setCardPagesProgress={setCardPagesProgress} />;
