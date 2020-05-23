@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Navbar } from 'react-bulma-components';
+import { NavColorContext } from '../providers/NavColorProvider';
 
 const Navigation = () => {
   const [showHide, setShowHide] = useState(false);
+  const navCtx = useContext(NavColorContext);
+
+  // To control the navigation colors class depending on the url
+  const HandleNavColor = () => {
+    switch (navCtx.navColor) {
+      case 'screener':
+        return 'navigation navigation-screener';
+      default:
+        return 'navigation';
+    }
+  };
 
   return (
     <Navbar
       fixed="top"
       active={showHide}
       transparent={false}
-      className="navigation"
+      className={HandleNavColor()}
     >
       <Navbar.Brand>
         <a href="/" className="navigation__logo-div">

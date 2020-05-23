@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Card = ({
- title1, title2, src, content,
+  title1, title2, src, content, link,
 }) => {
 
   return (
@@ -23,7 +24,8 @@ const Card = ({
             {content}
             <br />
           </div>
-          <button type="button" className="btn products__cards-container--card-btn">Start Here</button>
+          {/* <Link to={link} type="button" className="btn products__cards-container--card-btn">Start Here</Link> */}
+          <a href={link} className="btn products__cards-container--card-btn">Start Here</a>
 
         </div>
       </div>
@@ -36,6 +38,7 @@ Card.defaultProps = {
   title2: 'Card title2',
   src: 'Card image source',
   content: 'Card content text',
+  link: 'Card content link',
 };
 
 Card.propTypes = {
@@ -43,6 +46,7 @@ Card.propTypes = {
   title2: PropTypes.string,
   src: PropTypes.string,
   content: PropTypes.string,
+  link: PropTypes.string,
 };
 
 export default Card;
