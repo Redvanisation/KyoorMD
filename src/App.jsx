@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ScreenerPage from './pages/ScreenerPage';
 import NavColorProvider from './providers/NavColorProvider';
+import ComingSoon from './pages/ComingSoon';
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path="/screener-covid19" component={ScreenerPage} />
           <Route exact path="/screener-feeling" component={ScreenerPage} />
           <Route exact path="/screener-wellness" component={ScreenerPage} />
+          <Route exact path="/comingsoon" component={ComingSoon} />
         </NavColorProvider>
         {/* <Route exact path="/" render={(props) => <HomePage {...props} navColor={navColor} setNavColor={setNavColor} />} />
 

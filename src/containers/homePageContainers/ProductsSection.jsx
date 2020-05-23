@@ -19,7 +19,8 @@ const ProductsSection = () => {
           title2="Screener"
           src={nurseImg}
           content="COVID-19 is a life threating disease so make sure you know what's happening with your body."
-          link="/screener-covid19"
+          // link="/screener-covid19"
+          link="https://docs.google.com/forms/d/e/1FAIpQLSfE2n36S4K8qn_ssGjwpYuCPd-1t_VGq76XyxPcakTSUmsoqA/formResponse"
         />
 
         <Card
@@ -27,7 +28,8 @@ const ProductsSection = () => {
           title2="Feeling Sheet"
           src={showSheetImg}
           content="Going to visit a hospital or clinic? Make the admission process easier by having a sheet tell them how you're feeling."
-          link="/screener-feeling"
+          // link="/screener-feeling"
+          link="/comingsoon"
         />
 
         <Card
@@ -35,7 +37,8 @@ const ProductsSection = () => {
           title2="and Me"
           src={sleepingImg}
           content="Many of us are feeling anxious and uncertain. Tell us how you are doing, whether you are at home or working we want to help you!"
-          link="/screener-wellness"
+          // link="/screener-wellness"
+          link="https://docs.google.com/forms/d/e/1FAIpQLSfMFHoDlZBm9QiKjFe7JjKBCzmxSrWUoEZm3tLsJAMLqlUQBg/viewform"
         />
       </div>
 

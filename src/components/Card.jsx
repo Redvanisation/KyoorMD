@@ -24,7 +24,8 @@ const Card = ({
             {content}
             <br />
           </div>
-          <Link to={link} type="button" className="btn products__cards-container--card-btn">Start Here</Link>
+          {/* <Link to={link} type="button" className="btn products__cards-container--card-btn">Start Here</Link> */}
+          <a href={link} className="btn products__cards-container--card-btn">Start Here</a>
 
         </div>
       </div>
