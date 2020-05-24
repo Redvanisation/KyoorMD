@@ -15,7 +15,7 @@ const App = () => {
           <Route exact path="/screener-covid19" component={ScreenerPage} />
           <Route exact path="/screener-feeling" component={ScreenerPage} />
           <Route exact path="/screener-wellness" component={ScreenerPage} />
-          <Route exact path="/comingsoon" component={ComingSoon} />
+          <Route exact path="/coming-soon" component={ComingSoon} />
         </NavColorProvider>
         {/* <Route exact path="/" render={(props) => <HomePage {...props} navColor={navColor} setNavColor={setNavColor} />} />
 

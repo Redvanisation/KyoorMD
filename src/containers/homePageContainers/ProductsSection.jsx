@@ -29,7 +29,7 @@ const ProductsSection = () => {
           src={showSheetImg}
           content="Going to visit a hospital or clinic? Make the admission process easier by having a sheet tell them how you're feeling."
           // link="/screener-feeling"
-          link="/comingsoon"
+          href="/coming-soon"
         />
 
         <Card
