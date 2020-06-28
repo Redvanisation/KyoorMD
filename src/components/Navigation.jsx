@@ -1,14 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { Navbar } from 'react-bulma-components';
 import { NavColorContext } from '../providers/NavColorProvider';
+import { UserContext } from '../providers/UserProvider';
 
 const Navigation = () => {
   const [showHide, setShowHide] = useState(false);
   const navCtx = useContext(NavColorContext);
-  const user = false;
+  const userCtx = useContext(UserContext);
+
 
   // To control the navigation colors class depending on the url
-  const HandleNavColor = () => {
+  const handleNavColor = () => {
     switch (navCtx.navColor) {
       case 'screener':
         return 'navigation navigation-screener';
@@ -17,12 +19,16 @@ const Navigation = () => {
     }
   };
 
+  const handleLogout = () => {
+    userCtx.removeCookie('user');
+  };
+
   return (
     <Navbar
       fixed="top"
       active={showHide}
       transparent={false}
-      className={HandleNavColor()}
+      className={handleNavColor()}
     >
       <Navbar.Brand>
         <a href="/" className="navigation__logo-div">
@@ -51,9 +57,9 @@ const Navigation = () => {
             Contact
           </Navbar.Item>
           {
-            user
+            userCtx.cookies.user
               ? (
-                <Navbar.Item href="#" className="navigation__item">
+                <Navbar.Item href="#" className="navigation__item" onClick={handleLogout}>
                   Logout
                 </Navbar.Item>
               )

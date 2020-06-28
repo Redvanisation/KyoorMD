@@ -6,11 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "bulma": "^0.8.2",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bulma-components": "^3.2.0",
+    "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.7.2",
     "react-router": "^5.1.2",
@@ -40,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.19.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",

@@ -1,12 +1,25 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useLayoutEffect, useContext } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Layout from '../containers/Layout';
 import { baseUrl } from '../helpers';
+import { UserContext } from '../providers/UserProvider';
 
 const Login = () => {
+  const userCtx = useContext(UserContext);
   const { handleSubmit, register, errors } = useForm();
+  const history = useHistory();
+
+  useLayoutEffect(() => {
+    if (userCtx.cookies.user) {
+      // window.location = '/';
+      // alert('Already logged in!');
+      history.push('/');
+    }
+  });
+
   const onSubmit = (values) => {
     axios({
       method: 'post',
@@ -17,7 +30,9 @@ const Login = () => {
     })
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
-          console.log(res.data);
+          // console.log(res.data);
+          userCtx.setCookie('user', res.data.currentUser);
+          window.location = '/';
         }
       })
       .catch(() => alert('Error logging in!'));
@@ -42,7 +57,7 @@ const Login = () => {
                   required: 'Required',
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: 'Invalid email address'
+                    message: 'Invalid email address',
                   },
                 })}
               />
