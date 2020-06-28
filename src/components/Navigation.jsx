@@ -5,6 +5,7 @@ import { NavColorContext } from '../providers/NavColorProvider';
 const Navigation = () => {
   const [showHide, setShowHide] = useState(false);
   const navCtx = useContext(NavColorContext);
+  const user = false;
 
   // To control the navigation colors class depending on the url
   const HandleNavColor = () => {
@@ -49,6 +50,24 @@ const Navigation = () => {
           <Navbar.Item href="#" className="navigation__item">
             Contact
           </Navbar.Item>
+          {
+            user
+              ? (
+                <Navbar.Item href="#" className="navigation__item">
+                  Logout
+                </Navbar.Item>
+              )
+              : (
+                <>
+                  <Navbar.Item href="/auth" className="navigation__item">
+                    Login
+                  </Navbar.Item>
+                  <Navbar.Item href="/register" className="navigation__item">
+                    Register
+                  </Navbar.Item>
+                </>
+              )
+          }
         </Navbar.Container>
 
       </Navbar.Menu>
