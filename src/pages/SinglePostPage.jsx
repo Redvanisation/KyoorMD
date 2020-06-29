@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { DotLoader } from 'react-spinners';
+import ReactHtmlParserfrom from 'react-html-parser';
 import Layout from '../containers/Layout';
 import { baseUrl, loaderCSS } from '../helpers';
 import RichEditor from '../components/RichEditor';
@@ -36,7 +37,8 @@ const SinglePostPage = ({ match }) => {
           !isLoading
             ? (
               <>
-              <RichEditor />
+              {ReactHtmlParserfrom(post.content)}
+              {/* <RichEditor /> */}
                 {/* <h2 className="title is-2 is-centered">
                   Title:
                   {post.title}

@@ -61,9 +61,14 @@ const Navigation = () => {
           {
             userCtx.cookies.user
               ? (
-                <Navbar.Item href="/" className="navigation__item" onClick={handleLogout}>
-                  Logout
-                </Navbar.Item>
+                <>
+                  <Navbar.Item href="/posts/new" className="navigation__item">
+                    Add Article
+                  </Navbar.Item>
+                  <Navbar.Item href="/" className="navigation__item" onClick={handleLogout}>
+                    Logout
+                  </Navbar.Item>
+                </>
               )
               : (
                 <>
