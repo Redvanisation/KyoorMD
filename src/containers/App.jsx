@@ -8,6 +8,7 @@ import ComingSoon from '../pages/ComingSoon';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import BlogPage from '../pages/BlogPage';
+import SinglePostPage from '../pages/SinglePostPage';
 
 const App = () => {
 
@@ -24,6 +25,8 @@ const App = () => {
             <Route exact path="/blog" component={BlogPage} />
             <Route exact path="/auth" component={Login} />
             <Route exact path="/register" component={Signup} />
+
+            <Route exact path="/post/:id" component={SinglePostPage} />
           </NavColorProvider>
         </UserProvider>
         {/* <Route exact path="/" render={(props) => <HomePage {...props} navColor={navColor} setNavColor={setNavColor} />} />

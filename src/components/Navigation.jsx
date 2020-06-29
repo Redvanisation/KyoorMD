@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { Navbar } from 'react-bulma-components';
 import { NavColorContext } from '../providers/NavColorProvider';
 import { UserContext } from '../providers/UserProvider';
+import logoImg from '../img/logo/KyoorMD-logo.svg';
+import usFlag from '../img/icons8-usa.svg';
 
 const Navigation = () => {
   const [showHide, setShowHide] = useState(false);
@@ -32,7 +34,7 @@ const Navigation = () => {
     >
       <Navbar.Brand>
         <a href="/" className="navigation__logo-div">
-          <img src="./logo/KyoorMD-logo.svg" alt="KyoorMD" className="navigation__logo-div--logo" />
+          <img src={logoImg} alt="KyoorMD" className="navigation__logo-div--logo" />
         </a>
         <Navbar.Burger onClick={() => setShowHide(!showHide)} position="start" />
         <span className="burger-text">Menu</span>
@@ -40,7 +42,7 @@ const Navigation = () => {
         <div className="navigation__button-div">
           <button type="button" className="btn navigation__button-div--btn">
             English
-            <i className="navigation__button-div--icon"><img src="./icons8-usa.svg" alt="usa flag" className="navigation__button-div--icon-img" /></i>
+            <i className="navigation__button-div--icon"><img src={usFlag} alt="usa flag" className="navigation__button-div--icon-img" /></i>
           </button>
         </div>
 
@@ -50,7 +52,7 @@ const Navigation = () => {
           <Navbar.Item href="#" className="navigation__item">
             About
           </Navbar.Item>
-          <Navbar.Item href="#" className="navigation__item">
+          <Navbar.Item href="/blog" className="navigation__item">
             Blog
           </Navbar.Item>
           <Navbar.Item href="#" className="navigation__item">
@@ -59,7 +61,7 @@ const Navigation = () => {
           {
             userCtx.cookies.user
               ? (
-                <Navbar.Item href="#" className="navigation__item" onClick={handleLogout}>
+                <Navbar.Item href="/" className="navigation__item" onClick={handleLogout}>
                   Logout
                 </Navbar.Item>
               )

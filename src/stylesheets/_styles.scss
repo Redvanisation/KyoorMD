@@ -20,6 +20,11 @@ body {
   line-height: 1.5;
 }
 
+.is-centered {
+  margin: 0 auto !important;
+  text-align: center;
+}
+
 .screener {
   background-color: $color-gray;
 }
