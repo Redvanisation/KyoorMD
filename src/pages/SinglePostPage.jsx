@@ -4,6 +4,7 @@ import axios from 'axios';
 import { DotLoader } from 'react-spinners';
 import ReactHtmlParserfrom from 'react-html-parser';
 import Layout from '../containers/Layout';
+import Comment from '../components/Comment';
 import { baseUrl, loaderCSS } from '../helpers';
 
 
@@ -42,7 +43,12 @@ const SinglePostPage = ({ match }) => {
 
                 <hr />
                 <h3 className="title is-3">Comments</h3>
-                <div>{console.log(comments)}</div>
+                <div>
+                  {
+                    comments.map((comment) => <Comment key={comment.id} comment={comment} />)
+                  }
+                  {console.log(comments)}
+                </div>
               </main>
             )
             : (
