@@ -22,7 +22,7 @@ const AddArticlesPage = () => {
   });
 
   const submitArticle = () => {
-    if (content.length && userCtx.cookies.user) {
+    if (title.length && content.length && userCtx.cookies.user) {
       axios({
         method: 'post',
         url: `${baseUrl}posts`,
@@ -38,6 +38,8 @@ const AddArticlesPage = () => {
           }
         })
         .catch(() => alert('There has been an error saving the article!'));
+    } else {
+      alert('Please input an article and some content!');
     }
   };
 
@@ -45,14 +47,16 @@ const AddArticlesPage = () => {
     <Layout>
       <main className="add-article">
         <h2 className="title is-3 is-centered">Create an Article</h2>
-        <input className="input mt-2 mb-2" type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
+        <form>
+          <input className="input mt-2 mb-2" type="text" onChange={(e) => setTitle(e.target.value)} placeholder="Title" required />
 
-        <RichEditor setContent={setContent} />
+          <RichEditor setContent={setContent} />
 
-        <button className="button mt-2" type="button" onClick={() => submitArticle(content)}>Save!</button>
-        <div>
+          <button className="button mt-2" type="submit" onClick={() => submitArticle(content)}>Save!</button>
+        </form>
+        {/* <div>
           {ReactHtmlParserfrom(content)}
-        </div>
+        </div> */}
       </main>
     </Layout>
   );
