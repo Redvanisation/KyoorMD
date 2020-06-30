@@ -6,10 +6,27 @@ body {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   line-height: 2;
+  font-size: 1.1rem;
 }
 
 .columns {
   margin-left: 0;
   margin-right: 0;
 }
+
+.is-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.is-centered {
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.screener {
+  background-color: $color-gray;
+}
+
 

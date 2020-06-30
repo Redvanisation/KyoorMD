@@ -1,5 +1,5 @@
 .btn {
-  padding: .7rem 2rem;
+  padding: .7rem 1rem;
   margin: 2rem auto;
   background: $color-secondary-dark 0% 0% no-repeat padding-box;
   color: $color-white;
@@ -10,4 +10,11 @@
   font-family: 'Montserrat';
   outline: none;
   cursor: pointer;
+  transition: background-color, transform .2s;
+
+  &:hover {
+    background-color: $color-secondary;
+    transform: translateY(-2px);
+
+  }
 }

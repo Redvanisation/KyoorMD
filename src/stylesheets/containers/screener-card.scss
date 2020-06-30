@@ -1,0 +1,158 @@
+.screener-card {
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 5px;
+  line-height: 1.5;
+  max-width: 50%;
+  min-height: 650px;
+
+  &__nav-div {
+    display: flex;
+    justify-content: space-between;
+
+    &--item {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      color: $color-secondary;
+      font-weight: 500;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: all .2s;
+      outline: none;
+      
+      &:hover {
+        text-decoration: none;
+        color: $color-secondary;
+      }
+    }
+    
+    &--item-icon {
+      max-width: 13px;
+      position: relative;
+      top: 0;
+      right: 5px;
+      outline: none;
+    }
+  }
+
+  &__figure {
+    max-height: 50%;
+    width: 40%;
+    margin: 0 auto 2rem;
+  }
+
+  &__content {
+    text-align: left;
+    max-width: 80%;
+    margin: 0 auto;
+
+    &--description {
+      font-size: .8rem;
+      color: $color-secondary-dark;
+    }
+
+    &--part {
+      line-height: 1.5;
+    }
+  }
+
+  &__completion-div {
+    text-align: center;
+    margin-top: 2rem;
+
+    &--time {
+      margin-bottom: 0 !important;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    &--ul {
+      text-align: left;
+    }
+
+    &--li {
+
+    }
+
+    &--checkbox-div {
+      text-align: left;
+      margin-bottom: .5rem;
+    }
+
+    &--checkbox {
+      opacity: 0;
+    }
+
+    &--img {
+      position: relative;
+      width: 20px;
+      top: 3px;
+      margin-right: .5rem;
+    }
+
+    &--vector {
+      position: relative;
+      top: 10px;
+      width: 35px;
+      margin-right: .5rem;
+    }
+
+    &--text {
+      font-size: .8rem;
+      * {
+        font-size: .8rem;
+      }
+    }
+  }
+
+  &__btn {
+    margin: 0;
+  }
+
+  &__checkbox-text {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .screener-card {
+    max-width: 80%;
+
+    &__content {
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .screener-card {
+    max-width: 95%;
+    padding: 1rem;
+
+    &__figure {
+      width: 80%;
+    }
+
+    &__title {
+      font-size: 1.3rem !important;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__checkbox-text {
+      font-size: .8rem;
+      // letter-spacing: ;
+    }
+
+    &__completion-div {
+      &--vector {
+        width: 25px;
+        top: 5px;
+      }
+    }
+  }
+}

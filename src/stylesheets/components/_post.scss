@@ -1,0 +1,33 @@
+.post {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem auto;
+  height: 10rem;
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &__link,
+  &__link:link,
+  &__link:visited {
+    color: $color-black;
+    transition: all .3s;
+    &:hover {
+      color: $color-secondary-dark;
+    }
+
+    &--img {
+  
+    }
+  
+    &--title {
+  
+    }
+  
+    &--content {
+  
+    }
+  }
+
+}

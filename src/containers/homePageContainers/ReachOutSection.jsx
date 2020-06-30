@@ -1,5 +1,5 @@
 import React from 'react';
-import leapImg from '../img/img-kyoor-leap.svg';
+import leapImg from '../../img/img-kyoor-leap.svg';
 
 const ReachOutSection = () => {
   return (

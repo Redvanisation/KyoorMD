@@ -3,6 +3,7 @@
   padding: 2rem 8rem 1rem;
   font-weight: 400;
   z-index: 10000 !important;
+  
 
   &__logo-div {
     width: 10rem;
@@ -50,6 +51,33 @@
 
 .burger-text {
   display: none;
+}
+
+.navigation-screener {
+  background-color: $color-secondary-dark;
+  padding-top: 1rem;
+
+  .navigation {
+
+    &__logo-div {
+      display: none;
+    }
+
+    &__item {
+      color: $color-white;
+
+      &:hover {
+        color: $color-white !important;
+      }
+    }
+
+    &__button-div {
+      &--btn {
+        top: 15px;
+        background-color: $color-secondary;
+      }
+    }
+  }
 }
 
 
@@ -102,6 +130,17 @@
     top: 10px;
     left: -10px;
   }
+
+  .navigation-screener {
+    .navbar-menu {
+      background-color: $color-secondary-dark;
+    }
+  
+    .navbar-burger,
+    .burger-text {
+      color: $color-white;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -132,6 +171,16 @@
       &--icon-img {
         width: 18px;
         height: 18px;
+      }
+    }
+  }
+
+  .navigation-screener {
+    .navigation {
+      &__button-div {
+        &--btn {
+          top: 15px;
+        }
       }
     }
   }

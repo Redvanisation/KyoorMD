@@ -1,0 +1,19 @@
+.add-article {
+  padding: 1rem 2rem;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .add-article {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .add-article {
+    padding: 0;
+    max-width: 90%;
+  }
+}

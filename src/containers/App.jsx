@@ -1,0 +1,39 @@
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import ScreenerPage from '../pages/ScreenerPage';
+import UserProvider from '../providers/UserProvider';
+import NavColorProvider from '../providers/NavColorProvider';
+import ComingSoon from '../pages/ComingSoon';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import BlogPage from '../pages/BlogPage';
+import SinglePostPage from '../pages/SinglePostPage';
+import AddArticlesPage from '../pages/AddArticlesPage';
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <UserProvider>
+        <NavColorProvider>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/screener-covid19" component={ScreenerPage} />
+          <Route exact path="/screener-feeling" component={ScreenerPage} />
+          <Route exact path="/screener-wellness" component={ScreenerPage} />
+          <Route exact path="/coming-soon" component={ComingSoon} />
+          <Route exact path="/blog" component={BlogPage} />
+          <Route exact path="/auth" component={Login} />
+          <Route exact path="/register" component={Signup} />
+
+          <Route exact path="/post/:id" component={SinglePostPage} />
+          <Route exact path="/posts/new" component={AddArticlesPage} />
+        </NavColorProvider>
+      </UserProvider>
+      {/* <Route exact path="/" render={(props) => <HomePage {...props} navColor={navColor} setNavColor={setNavColor} />} />
+
+      <Route exact path="/screener" render={(props) => <ScreenerPage {...props} navColor={navColor} setNavColor={setNavColor} />} /> */}
+    </Switch>
+  </BrowserRouter>
+);
+
+export default App;
