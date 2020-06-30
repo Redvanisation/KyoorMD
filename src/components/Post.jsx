@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
   return (
-    <Link to={`/post/${post.id}`} className="post">
-      <h3>{post.title}</h3>
-      <p>Content: {post.content}</p>
-    </Link>
+    <div className="post">
+      <Link to={`/post/${post.id}`} className="post__link">
+        {/* <img src="post__link--img" alt="article" /> */}
+        <h3 className="title is-4 post__link--title">{post.title}</h3>
+        <p className="post__link--content">{post.content}</p>
+      </Link>
+    </div>
   );
 };
 

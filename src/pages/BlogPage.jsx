@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { DotLoader } from 'react-spinners';
 import Layout from '../containers/Layout';
-import { baseUrl } from '../helpers';
+import { baseUrl, loaderCSS } from '../helpers';
 import Post from '../components/Post';
 
 const BlogPage = () => {
@@ -35,7 +36,7 @@ const BlogPage = () => {
               </section>
             )
             : (
-              <h3>LOADING...</h3>
+              <DotLoader size={60} color="#54C0AB" css={loaderCSS} loading={isLoading} />
             )
         }
       </main>

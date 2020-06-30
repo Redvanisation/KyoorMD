@@ -1,6 +1,5 @@
 import React, { useState, useContext, useLayoutEffect } from 'react';
 import axios from 'axios';
-import ReactHtmlParserfrom from 'react-html-parser';
 import { useHistory } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import RichEditor from '../components/RichEditor';
