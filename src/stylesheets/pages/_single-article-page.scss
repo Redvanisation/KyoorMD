@@ -1,0 +1,18 @@
+.single-article-page {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .single-article-page {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .single-article-page {
+    padding: 0;
+    max-width: 90%;
+  }
+}

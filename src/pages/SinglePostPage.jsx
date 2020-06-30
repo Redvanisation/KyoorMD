@@ -5,7 +5,7 @@ import { DotLoader } from 'react-spinners';
 import ReactHtmlParserfrom from 'react-html-parser';
 import Layout from '../containers/Layout';
 import { baseUrl, loaderCSS } from '../helpers';
-import RichEditor from '../components/RichEditor';
+
 
 const SinglePostPage = ({ match }) => {
   const [post, setPost] = useState({});
@@ -36,45 +36,14 @@ const SinglePostPage = ({ match }) => {
         {
           !isLoading
             ? (
-              <>
-              {ReactHtmlParserfrom(post.content)}
-              {/* <RichEditor /> */}
-                {/* <h2 className="title is-2 is-centered">
-                  Title:
-                  {post.title}
-                </h2>
-                <div>
-                  Content:
-                  {' '}
-                  {post.content}
-                </div>
-                <h3 className="title is-3 is-centered">Comments</h3>
-                <div>
-                  {comments.map((comment) => (
-                    <div key={comment.id}>
-                      <p>
-                        Comment:
-                        {comment.body}
-                      </p>
-                      <p>
-                        Date:
-                        {comment.comment_created}
-                      </p>
-                      <p>
-                        User:
-                        {comment.username}
-                      </p>
-                      <p>
-                        User email:
-                        {comment.email}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  tags: {post.tags}
-                </div> */}
-              </>
+              <main className="single-article-page">
+                <h2 className="title is-2 is-centered">{post.title}</h2>
+                <div className="mt-3 mb-2">{ReactHtmlParserfrom(post.content)}</div>
+
+                <hr />
+                <h3 className="title is-3">Comments</h3>
+                <div>{console.log(comments)}</div>
+              </main>
             )
             : (
               <DotLoader size={60} color="#54C0AB" css={loaderCSS} loading={isLoading} />
