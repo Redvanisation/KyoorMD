@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/no-array-index-key */
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { DotLoader } from 'react-spinners';
 import ReactHtmlParserfrom from 'react-html-parser';
 import Layout from '../containers/Layout';
 import Comment from '../components/Comment';
+import RichEditor from '../components/RichEditor';
 import { baseUrl, loaderCSS } from '../helpers';
+import { UserContext } from '../providers/UserProvider';
 
 
 const SinglePostPage = ({ match }) => {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState({});
+  const [content, setContent] = useState(''); // Comment content state for the Rich Editor
   const [isLoading, setIsLoading] = useState(true);
   const { id } = match.params;
+  const userCtx = useContext(UserContext);
 
 
   useEffect(() => {
@@ -21,7 +26,6 @@ const SinglePostPage = ({ match }) => {
         method: 'get',
         url: `${baseUrl}posts/${id}`,
       });
-      // console.log(response.data);
       setPost(response.data.post);
       setComments(response.data.comments);
       setIsLoading(false);
@@ -29,6 +33,29 @@ const SinglePostPage = ({ match }) => {
 
     getPost();
   }, []);
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+
+    if (userCtx.cookies.user) {
+      axios({
+        method: 'post',
+        url: `${baseUrl}comments/new`,
+        data: {
+          post_id: id,
+          user_id: userCtx.cookies.user.id,
+          body: content,
+        },
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            alert('Commented successfully');
+            setComments(res.data.comments);
+          }
+        })
+        .catch(() => alert('Error commenting!'));
+    }
+  };
 
   return (
     <Layout>
@@ -45,10 +72,22 @@ const SinglePostPage = ({ match }) => {
                 <h3 className="title is-3">Comments</h3>
                 <div>
                   {
-                    comments.map((comment) => <Comment key={comment.id} comment={comment} />)
+                    comments.map((comment, i) => <Comment key={i} comment={comment} />)
                   }
                   {console.log(comments)}
                 </div>
+
+                {
+                  userCtx.cookies.user
+                    ? (
+                      <form className="mt-3" onSubmit={handleCommentSubmit}>
+                        <h3 className="title is-3">Add a comment</h3>
+                        <RichEditor setContent={setContent} />
+                        <button className="button mt-2" type="submit">Comment!</button>
+                      </form>
+                    )
+                    : null
+                }
               </main>
             )
             : (
