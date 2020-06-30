@@ -7,6 +7,7 @@ import ReactHtmlParserfrom from 'react-html-parser';
 import Layout from '../containers/Layout';
 import Comment from '../components/Comment';
 import RichEditor from '../components/RichEditor';
+import Tag from '../components/Tag';
 import { baseUrl, loaderCSS } from '../helpers';
 import { UserContext } from '../providers/UserProvider';
 
@@ -67,6 +68,9 @@ const SinglePostPage = ({ match }) => {
               <main className="single-article-page">
                 <h2 className="title is-2 is-centered">{post.title}</h2>
                 <div className="mt-3 mb-2">{ReactHtmlParserfrom(post.content)}</div>
+                {
+                  post.tags.split(',').map((tag, i) => <Tag key={i} tag={tag} />)
+                }
 
                 <hr />
                 <h3 className="title is-3">Comments</h3>
@@ -74,7 +78,7 @@ const SinglePostPage = ({ match }) => {
                   {
                     comments.map((comment, i) => <Comment key={i} comment={comment} />)
                   }
-                  {console.log(comments)}
+                  {/* {console.log(post)} */}
                 </div>
 
                 {

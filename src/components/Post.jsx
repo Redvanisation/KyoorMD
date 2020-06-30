@@ -8,7 +8,7 @@ const Post = ({ post }) => {
       <Link to={`/post/${post.id}`} className="post__link">
         {/* <img src="post__link--img" alt="article" /> */}
         <h3 className="title is-4 post__link--title">{post.title}</h3>
-        <p className="post__link--content">{post.content}</p>
+        <p className="post__link--content">{post.description}</p>
       </Link>
     </div>
   );

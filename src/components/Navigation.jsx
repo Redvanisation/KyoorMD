@@ -65,7 +65,7 @@ const Navigation = () => {
                   <Navbar.Item href="/posts/new" className="navigation__item">
                     Add Article
                   </Navbar.Item>
-                  <Navbar.Item href="/" className="navigation__item" onClick={handleLogout}>
+                  <Navbar.Item className="navigation__item" onClick={handleLogout}>
                     Logout
                   </Navbar.Item>
                 </>
