@@ -39,7 +39,9 @@ const AddArticlesPage = () => {
       })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {
-            console.log(res.data);
+            alert('Article submitted successfully!');
+            history.push('/blog');
+            // console.log(res.data);
           }
         })
         .catch(() => alert('There has been an error saving the article!'));
