@@ -3,3 +3,14 @@
   max-width: 40%;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 900px) {
+  .form-container {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-container {
+    max-width: 80%;
+  }
+}

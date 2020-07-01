@@ -63,7 +63,7 @@ const SinglePostPage = ({ match }) => {
       <main>
 
         {
-          !isLoading
+          !isLoading && post
             ? (
               <main className="single-article-page">
                 <h2 className="title is-2 is-centered">{post.title}</h2>
