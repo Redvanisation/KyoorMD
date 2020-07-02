@@ -9,7 +9,6 @@ const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
     const getPosts = async () => {
       const response = await axios({
@@ -25,10 +24,23 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <Layout>
-      <main className="blog">
-        <h2 className="title is-2 is-centered">Blog Page</h2>
-        {
+    <section className="blogPage">
+      <div className="blog__search">
+        <p>Categories</p>
+        <p>Search</p>
+      </div>
+      <div className="blog columns is-desktop">
+        <div className="column is-half blog__content">
+          <h2 className="title is-2 is-bold blog__content--title">Know More About Your Body And What&rsquo;s Happening Around It</h2>
+          <p className="blog__content--p is-subtitle">Read up on health and wellness articles to help you gather information on questions you want answers to. From a community that wants to help you.</p>
+        </div>
+
+        <div className="column is-half blog__content--div-img" />
+      </div>
+      <Layout>
+        <main className="blog__layout">
+          <h2 className="title is-centered">Blog Page</h2>
+          {
           !isLoading
             ? (
               <section className="blog__list">
@@ -39,8 +51,9 @@ const BlogPage = () => {
               <DotLoader size={60} color="#54C0AB" css={loaderCSS} loading={isLoading} />
             )
         }
-      </main>
-    </Layout>
+        </main>
+      </Layout>
+    </section>
   );
 };
 

@@ -1,20 +1,117 @@
+.blogPage {
+  margin-top: 4.5rem;
+}
+
 .blog {
-  max-width: 60%;
-  margin: 0 auto;
+  position: relative;
+  padding-top: 4rem;
+  // height: 500px;
+  width: 100%;
+  background-color: $color-tertiary;
+
+  &__layout {
+    max-width: 60%;
+    margin: 0 auto;
+  }
   
+  &__search {
+    display: flex;
+    justify-content: space-evenly;
+    height: 3rem;
+    // width: 30%;
+    background: #55bfac;
+  }
+
+  &__page {
+    margin-top: 60px;
+  }
+
   &__list {
     margin: 1rem auto;
   }
-}
 
-@media only screen and (max-width: 900px) {
-  .blog {
-    max-width: 80%;
+  &__content {
+    width: 35%;
+    padding: 2rem;
+    margin: 2rem auto auto 8rem;
+    text-align: left;
+    max-width: 640px;
+    text-overflow: ellipsis;
+
+
+    &--p {
+      margin: .5rem auto 1.5rem;
+    }
+
+    &--div-img {
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      background-image: url('../../img/img-hero.svg');
+      background-size: 90%;
+      background-position-x: 100%;
+      background-position-y: 100%;
+      background-repeat: no-repeat;
+    }
+
+    &--btn {
+      margin-top: 0 !important;
+    }
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1023px) {
   .blog {
-    max-width: 90%;
+    height: 100%;
+    overflow: hidden;
+
+    &__content {
+      position: relative;
+      z-index: 1000;
+      width: 100% !important;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      margin-left: auto;
+      text-align: center;
+
+      &--div-img {
+        position: static;
+        width: 100% !important;
+        background-image: none;
+        content: url('../../img/img-hero.svg');
+        padding: .5rem 0;
+      }
+      
+      &--div-img:after {
+        content: url('../../img/img-hero.svg');
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .blogPage {
+    margin-top: 2rem;
+  }
+
+  .blog {
+    &__content {
+      width: 80%;
+      margin: 1rem auto;
+      padding: 1rem;
+      padding-bottom: 2rem;
+      
+      &--title {
+        font-size: 2rem !important;
+      }
+
+      &--btn {
+        margin-top: 1rem !important;
+      }
+    }
   }
 }
