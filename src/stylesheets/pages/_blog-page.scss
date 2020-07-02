@@ -1,5 +1,6 @@
 .blogPage {
   margin-top: 4.5rem;
+  background: #e9ebee;
 }
 
 .blog {
@@ -28,12 +29,17 @@
 
   &__list {
     margin: 1rem auto;
+    background: white;
+  }
+
+  &__categories {
+    padding-top: 4rem;
   }
 
   &__content {
     width: 35%;
     padding: 2rem;
-    margin: 2rem auto auto 8rem;
+    margin: 2rem 3rem auto auto;
     text-align: left;
     max-width: 640px;
     text-overflow: ellipsis;
@@ -47,13 +53,8 @@
       height: 100%;
       position: absolute;
       bottom: 0;
-      right: 0;
-      width: 50%;
-      background-image: url('../../img/img-hero.svg');
-      background-size: 90%;
-      background-position-x: 100%;
-      background-position-y: 100%;
-      background-repeat: no-repeat;
+      left: 0;
+      background: url('../../img/img-kyoor-airheads.svg') 50% 100%/90% no-repeat;
     }
 
     &--btn {

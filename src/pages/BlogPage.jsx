@@ -30,12 +30,15 @@ const BlogPage = () => {
         <p>Search</p>
       </div>
       <div className="blog columns is-desktop">
+        <div className="column is-half blog__content--div-img" />
         <div className="column is-half blog__content">
           <h2 className="title is-2 is-bold blog__content--title">Know More About Your Body And What&rsquo;s Happening Around It</h2>
           <p className="blog__content--p is-subtitle">Read up on health and wellness articles to help you gather information on questions you want answers to. From a community that wants to help you.</p>
         </div>
-
-        <div className="column is-half blog__content--div-img" />
+      </div>
+      <div className="blog__categories">
+        <h3 className="title is-3 is-centered">Article Categories</h3>
+        <button type="submit" className="button is-outlined">Outlined</button>
       </div>
       <Layout>
         <main className="blog__layout">
