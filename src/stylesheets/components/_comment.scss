@@ -1,0 +1,46 @@
+.comment {
+  border-radius: 5px;
+  border: 1px solid rgba($color-black, .1);
+  padding: 1rem;
+  margin: 1rem auto;
+  &__author {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &--img {
+      height: 80px;
+      width: 80px;
+      border: 1px solid orange;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    &--name {
+      margin-left: 2rem;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    &--time {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: .8rem;
+    }
+  }
+  
+  &__details {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba($color-black, .1);
+    // border-bottom: 1px solid rgba($color-black, .1);
+
+    &--text {
+    }
+    
+  }
+}

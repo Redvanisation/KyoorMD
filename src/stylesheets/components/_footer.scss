@@ -1,17 +1,47 @@
 .footer {
   background-color: $color-secondary;
   padding: 2rem 6rem;
+  display: flex;
+  justify-content: space-evenly;
 
-  &__text {
-    
+
+  &__links-container {
+    &--link,
+    &--link:link,
+    &--link:visited {
+      color: inherit;
+      text-decoration: underline;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .footer {
 
+@media only screen and (max-width: 800px) {
+  .footer {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
     &__text {
       text-align: center;
+    }
+  
+    &__links-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &--link,
+      &--link:link,
+      &--link:visited {  
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
     }
   }
 }

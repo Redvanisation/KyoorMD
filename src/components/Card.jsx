@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Card = ({
-  title1, title2, src, content, link,
+  title1, title2, src, content, link, href=null
 }) => {
 
   return (
@@ -24,8 +24,11 @@ const Card = ({
             {content}
             <br />
           </div>
-          {/* <Link to={link} type="button" className="btn products__cards-container--card-btn">Start Here</Link> */}
-          <a href={link} className="btn products__cards-container--card-btn">Start Here</a>
+          {
+            href
+              ? <Link to={href} type="button" className="btn products__cards-container--card-btn">Start Here</Link>
+              : <a href={link} className="btn products__cards-container--card-btn">Start Here</a>
+          }
 
         </div>
       </div>

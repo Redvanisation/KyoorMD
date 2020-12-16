@@ -28,8 +28,8 @@ const ProductsSection = () => {
           title2="Feeling Sheet"
           src={showSheetImg}
           content="Going to visit a hospital or clinic? Make the admission process easier by having a sheet tell them how you're feeling."
-          // link="/screener-feeling"
-          link="/comingsoon"
+          link="https://docs.google.com/forms/d/e/1FAIpQLScxEdSlYngUV2bJwJ_5-kyebSZyAOqfb_3ifiZRrAbe4LK-zA/viewform"
+          // href="/coming-soon"
         />
 
         <Card
